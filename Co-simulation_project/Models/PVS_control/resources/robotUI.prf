@@ -1,0 +1,308 @@
+(robotUI
+ (inc_CW_speed_TCC1 0
+  (inc_CW_speed_TCC1-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (MAX_CW_SPEED const-decl "Speed" robotUI nil))
+   nil))
+ (inc_CCW_speed_TCC1 0
+  (inc_CCW_speed_TCC1-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (MAX_CCW_SPEED const-decl "Speed" robotUI nil))
+   nil))
+ (dec_speed_TCC1 0
+  (dec_speed_TCC1-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (IDLE const-decl "Speed" robotUI nil))
+   nil))
+ (dec_speed_TCC2 0
+  (dec_speed_TCC2-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (IDLE const-decl "Speed" robotUI nil))
+   nil))
+ (dec_speed_TCC3 0
+  (dec_speed_TCC3-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (IDLE const-decl "Speed" robotUI nil))
+   nil))
+ (dec_speed_TCC4 0
+  (dec_speed_TCC4-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (IDLE const-decl "Speed" robotUI nil))
+   nil))
+ (update_left_motor_speed_TCC1 0
+  (update_left_motor_speed_TCC1-1 nil 3770969190 ("" (tcc))
+   ((real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil))
+   nil))
+ (center_drive_direction_TCC1 0
+  (center_drive_direction_TCC1-1 nil 3770969190 ("" (tcc))
+   ((real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (minus_real_is_real application-judgement "real" reals nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (center_drive_direction_TCC2 0
+  (center_drive_direction_TCC2-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (center_drive_direction_TCC3 0
+  (center_drive_direction_TCC3-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (center_drive_direction_TCC4 0
+  (center_drive_direction_TCC4-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (center_drive_direction_TCC5 0
+  (center_drive_direction_TCC5-1 nil 3770969190 ("" (tcc))
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (Speed type-eq-decl nil robotUI nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (center_drive_direction_TCC6 0
+  (center_drive_direction_TCC6-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil))
+   nil))
+ (accelerate_TCC1 0
+  (accelerate_TCC1-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil)
+    (ACC_STEP const-decl "Speed" robotUI nil))
+   nil))
+ (accelerate_TCC2 0
+  (accelerate_TCC2-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil)
+    (ACC_STEP const-decl "Speed" robotUI nil))
+   nil))
+ (accelerate_TCC3 0
+  (accelerate_TCC3-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil))
+   nil))
+ (accelerate_TCC4 0
+  (accelerate_TCC4-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil))
+   nil))
+ (brake_TCC1 0
+  (brake_TCC1-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil)
+    (BRAKE_STEP const-decl "Speed" robotUI nil))
+   nil))
+ (right_TCC1 0
+  (right_TCC1-1 nil 3770969190 ("" (tcc))
+   ((abs const-decl "{n: nonneg_real | n >= m AND n >= -m}" real_defs
+         nil)
+    (min const-decl "{p: real | p <= m AND p <= n}" real_defs nil)
+    (center_drive_direction const-decl "State" robotUI nil)
+    (autopilot_off const-decl "State" robotUI nil)
+    (TURN_SPEED const-decl "Speed" robotUI nil))
+   nil)))
+

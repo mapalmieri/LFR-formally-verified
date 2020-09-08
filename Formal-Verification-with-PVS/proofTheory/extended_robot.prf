@@ -1,0 +1,1471 @@
+(extended_robot
+ (update_speed_TCC1 0
+  (update_speed_TCC1-1 nil 3771904021 ("" (tcc))
+   ((real_plus_real_is_real application-judgement "real" reals nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil))
+   nil))
+ (update_speed_TCC2 0
+  (yes "" 3771933093 ("" (tcc))
+   ((real_plus_real_is_real application-judgement "real" reals nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil))
+   shostak)
+  (update_speed_TCC2-1 nil 3771904021 ("" (tcc))
+   ((real_plus_real_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil))
+   shostak))
+ (CS_TCC1 0
+  (CS_TCC1-1 nil 3772195645 ("" (subtype-tcc) nil nil)
+   ((boolean nonempty-type-decl nil booleans nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (>= const-decl "bool" reals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil))
+   nil))
+ (CS_TCC2 0
+  (CS_TCC2-1 nil 3772195645 ("" (termination-tcc) nil nil) nil nil))
+ (always_auto 0
+  (always_auto-1 nil 3773055060
+   ("" (induct K) (("1" (grind) nil nil) ("2" (grind) nil nil)) nil)
+   ((minus_real_is_real application-judgement "real" reals nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (Integral const-decl "real" integral_def "analysis/")
+    (atan_value const-decl "real" atan "trig_fnd/")
+    (pi const-decl "posreal" atan "trig_fnd/")
+    (sin_value const-decl "[real_abs_le_pi2 -> real_abs_le1]"
+     sincos_quad "trig_fnd/")
+    (atan const-decl "real_abs_lt_pi2" atan "trig_fnd/")
+    (asin const-decl "real_abs_le_pi2" asin "trig_fnd/")
+    (inverse const-decl "D" function_inverse nil)
+    (sin_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (sin const-decl "real" sincos_def "trig_fnd/")
+    (cos_value const-decl "[nnreal_le_pi -> real_abs_le1]" sincos_quad
+     "trig_fnd/")
+    (acos const-decl "nnreal_le_pi" acos "trig_fnd/")
+    (cos_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (IDLE const-decl "Speed" SemiAutonomousLFR nil)
+    (init_ext_state const-decl "Ext_State" extended_robot nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (nat_induction formula-decl nil naturalnumbers nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (posreal nonempty-type-eq-decl nil real_types nil)
+    (MotorSpeed type-eq-decl nil SemiAutonomousLFR nil)
+    (LightSensors type-eq-decl nil SemiAutonomousLFR nil)
+    (Gear type-decl nil SemiAutonomousLFR nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (CruiseControl type-decl nil SemiAutonomousLFR nil)
+    (pred type-eq-decl nil defined_types nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (linear_timesteps 0
+  (linear_timesteps-1 nil 3773055090
+   ("" (induct K) (("1" (grind) nil nil) ("2" (grind) nil nil)) nil)
+   ((minus_real_is_real application-judgement "real" reals nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (Integral const-decl "real" integral_def "analysis/")
+    (atan_value const-decl "real" atan "trig_fnd/")
+    (pi const-decl "posreal" atan "trig_fnd/")
+    (sin_value const-decl "[real_abs_le_pi2 -> real_abs_le1]"
+     sincos_quad "trig_fnd/")
+    (atan const-decl "real_abs_lt_pi2" atan "trig_fnd/")
+    (asin const-decl "real_abs_le_pi2" asin "trig_fnd/")
+    (inverse const-decl "D" function_inverse nil)
+    (sin_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (sin const-decl "real" sincos_def "trig_fnd/")
+    (cos_value const-decl "[nnreal_le_pi -> real_abs_le1]" sincos_quad
+     "trig_fnd/")
+    (acos const-decl "nnreal_le_pi" acos "trig_fnd/")
+    (cos_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (IDLE const-decl "Speed" SemiAutonomousLFR nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (init_ext_state const-decl "Ext_State" extended_robot nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (nat_induction formula-decl nil naturalnumbers nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (pred type-eq-decl nil defined_types nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (fixed_interval 0
+  (fixed_interval-1 nil 3773055105
+   ("" (induct K)
+    (("1" (grind) nil nil)
+     ("2" (grind) (("2" (postpone) nil nil)) nil))
+    nil)
+   ((minus_real_is_real application-judgement "real" reals nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (Integral const-decl "real" integral_def "analysis/")
+    (atan_value const-decl "real" atan "trig_fnd/")
+    (pi const-decl "posreal" atan "trig_fnd/")
+    (sin_value const-decl "[real_abs_le_pi2 -> real_abs_le1]"
+     sincos_quad "trig_fnd/")
+    (atan const-decl "real_abs_lt_pi2" atan "trig_fnd/")
+    (asin const-decl "real_abs_le_pi2" asin "trig_fnd/")
+    (inverse const-decl "D" function_inverse nil)
+    (sin_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (sin const-decl "real" sincos_def "trig_fnd/")
+    (cos_value const-decl "[nnreal_le_pi -> real_abs_le1]" sincos_quad
+     "trig_fnd/")
+    (acos const-decl "nnreal_le_pi" acos "trig_fnd/")
+    (cos_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (IDLE const-decl "Speed" SemiAutonomousLFR nil)
+    (init_ext_state const-decl "Ext_State" extended_robot nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (nat_induction formula-decl nil naturalnumbers nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (posreal nonempty-type-eq-decl nil real_types nil)
+    (MotorSpeed type-eq-decl nil SemiAutonomousLFR nil)
+    (LightSensors type-eq-decl nil SemiAutonomousLFR nil)
+    (Gear type-decl nil SemiAutonomousLFR nil)
+    (CruiseControl type-decl nil SemiAutonomousLFR nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (pred type-eq-decl nil defined_types nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (fixed_step 0
+  (fixed_step-1 nil 3772194965
+   ("" (induct K) (("1" (grind) nil nil) ("2" (grind) nil nil)) nil)
+   ((minus_real_is_real application-judgement "real" reals nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (Integral const-decl "real" integral_def "analysis/")
+    (atan_value const-decl "real" atan "trig_fnd/")
+    (pi const-decl "posreal" atan "trig_fnd/")
+    (sin_value const-decl "[real_abs_le_pi2 -> real_abs_le1]"
+     sincos_quad "trig_fnd/")
+    (atan const-decl "real_abs_lt_pi2" atan "trig_fnd/")
+    (asin const-decl "real_abs_le_pi2" asin "trig_fnd/")
+    (inverse const-decl "D" function_inverse nil)
+    (sin_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (sin const-decl "real" sincos_def "trig_fnd/")
+    (cos_value const-decl "[nnreal_le_pi -> real_abs_le1]" sincos_quad
+     "trig_fnd/")
+    (acos const-decl "nnreal_le_pi" acos "trig_fnd/")
+    (cos_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (IDLE const-decl "Speed" SemiAutonomousLFR nil)
+    (init_ext_state const-decl "Ext_State" extended_robot nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (nat_induction formula-decl nil naturalnumbers nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (posreal nonempty-type-eq-decl nil real_types nil)
+    (MotorSpeed type-eq-decl nil SemiAutonomousLFR nil)
+    (LightSensors type-eq-decl nil SemiAutonomousLFR nil)
+    (Gear type-decl nil SemiAutonomousLFR nil)
+    (CruiseControl type-decl nil SemiAutonomousLFR nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (pred type-eq-decl nil defined_types nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (lin_value 0
+  (lin_value-1 nil 3772197677
+   ("" (induct K)
+    (("1" (assert)
+      (("1" (rewrite CS)
+        (("1" (rewrite init_ext_state) (("1" (assert) nil nil)) nil))
+        nil))
+      nil)
+     ("2" (skeep) (("2" (grind) nil nil)) nil))
+    nil)
+   ((cos_range application-judgement "trig_range" sincos_def
+     "trig_fnd/")
+    (real_div_nzreal_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (sin_range application-judgement "trig_range" sincos_def
+     "trig_fnd/")
+    (minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (posint_plus_nnint_is_posint application-judgement "posint"
+     integers nil)
+    (nnint_plus_posint_is_posint application-judgement "posint"
+     integers nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (Integral const-decl "real" integral_def "analysis/")
+    (atan_value const-decl "real" atan "trig_fnd/")
+    (pi const-decl "posreal" atan "trig_fnd/")
+    (sin_value const-decl "[real_abs_le_pi2 -> real_abs_le1]"
+     sincos_quad "trig_fnd/")
+    (atan const-decl "real_abs_lt_pi2" atan "trig_fnd/")
+    (asin const-decl "real_abs_le_pi2" asin "trig_fnd/")
+    (inverse const-decl "D" function_inverse nil)
+    (sin_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (sin const-decl "real" sincos_def "trig_fnd/")
+    (cos_value const-decl "[nnreal_le_pi -> real_abs_le1]" sincos_quad
+     "trig_fnd/")
+    (acos const-decl "nnreal_le_pi" acos "trig_fnd/")
+    (cos_phase const-decl "real_abs_le1" sincos_phase "trig_fnd/")
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (init_ext_state const-decl "Ext_State" extended_robot nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (nat_induction formula-decl nil naturalnumbers nil)
+    (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
+    (nznum nonempty-type-eq-decl nil number_fields nil)
+    (/= const-decl "boolean" notequal nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (OR const-decl "[bool, bool -> bool]" booleans nil)
+    (pred type-eq-decl nil defined_types nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (maximum_distance_TCC1 0
+  (maximum_distance_TCC1-1 nil 3772194897 ("" (subtype-tcc) nil nil)
+   nil nil))
+ (maximum_distance 0
+  (maximum_distance-1 "" 3772195236
+   ("" (skeep)
+    (("" (both-sides + "CS(K-1)`yy" 1)
+      (("" (simplify)
+        (("" (name-replace "X" "CS(K-1)`yy" 1)
+          (("" (lemma fixed_step)
+            (("" (inst?)
+              (("" (copy -1)
+                (("" (rewrite-with-fnum -1 1)
+                  (("" (rewrite CS)
+                    (("" (rewrite ext_tick)
+                      (("" (rewrite update_speed)
+                        (("" (rewrite update_position)
+                          (("1" (simplify)
+                            (("1" (rewrite X)
+                              (("1"
+                                (both-sides - "CS(K-1)`yy" 1)
+                                (("1"
+                                  (simplify)
+                                  (("1"
+                                    (lemma fixed_step)
+                                    (("1"
+                                      (inst?)
+                                      (("1"
+                                        (rewrite-with-fnum -1 1)
+                                        (("1"
+                                          (lift-if)
+                                          (("1"
+                                            (split)
+                                            (("1"
+                                              (flatten)
+                                              (("1" (assert) nil nil))
+                                              nil)
+                                             ("2"
+                                              (flatten)
+                                              (("2"
+                                                (hide 1)
+                                                (("2"
+                                                  (split)
+                                                  (("1"
+                                                    (assert)
+                                                    (("1"
+                                                      (flatten)
+                                                      (("1"
+                                                        (expand
+                                                         fmi_tick)
+                                                        (("1"
+                                                          (expand tick)
+                                                          (("1"
+                                                            (expand
+                                                             attack)
+                                                            (("1"
+                                                              (simplify)
+                                                              (("1"
+                                                                (lift-if)
+                                                                (("1"
+                                                                  (hide
+                                                                   -1)
+                                                                  (("1"
+                                                                    (lemma
+                                                                     fixed_step)
+                                                                    (("1"
+                                                                      (inst?)
+                                                                      (("1"
+                                                                        (rewrite-with-fnum
+                                                                         -1
+                                                                         1)
+                                                                        (("1"
+                                                                          (assert)
+                                                                          (("1"
+                                                                            (expand
+                                                                             init_state)
+                                                                            (("1"
+                                                                              (assert)
+                                                                              (("1"
+                                                                                (typepred
+                                                                                 S)
+                                                                                (("1"
+                                                                                  (simplify)
+                                                                                  (("1"
+                                                                                    (cancel-by
+                                                                                     1
+                                                                                     "1/16")
+                                                                                    (("1"
+                                                                                      (assert)
+                                                                                      (("1"
+                                                                                        (cancel-by
+                                                                                         2
+                                                                                         "S")
+                                                                                        nil
+                                                                                        nil))
+                                                                                      nil))
+                                                                                    nil))
+                                                                                  nil))
+                                                                                nil))
+                                                                              nil))
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil)
+                                                   ("2"
+                                                    (flatten)
+                                                    (("2"
+                                                      (hide 1)
+                                                      (("2"
+                                                        (split)
+                                                        (("1"
+                                                          (assert)
+                                                          (("1"
+                                                            (flatten)
+                                                            (("1"
+                                                              (hide -1)
+                                                              (("1"
+                                                                (expand
+                                                                 fmi_tick)
+                                                                (("1"
+                                                                  (expand
+                                                                   tick)
+                                                                  (("1"
+                                                                    (expand
+                                                                     attack)
+                                                                    (("1"
+                                                                      (simplify)
+                                                                      (("1"
+                                                                        (lemma
+                                                                         fixed_step)
+                                                                        (("1"
+                                                                          (inst?)
+                                                                          (("1"
+                                                                            (rewrite-with-fnum
+                                                                             -1
+                                                                             1)
+                                                                            (("1"
+                                                                              (assert)
+                                                                              (("1"
+                                                                                (expand
+                                                                                 init_state)
+                                                                                (("1"
+                                                                                  (assert)
+                                                                                  (("1"
+                                                                                    (cancel-by
+                                                                                     1
+                                                                                     "S")
+                                                                                    nil
+                                                                                    nil))
+                                                                                  nil))
+                                                                                nil))
+                                                                              nil))
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil)
+                                                         ("2"
+                                                          (flatten)
+                                                          (("2"
+                                                            (hide 1)
+                                                            (("2"
+                                                              (split)
+                                                              (("1"
+                                                                (assert)
+                                                                (("1"
+                                                                  (flatten)
+                                                                  (("1"
+                                                                    (hide
+                                                                     -1)
+                                                                    (("1"
+                                                                      (lemma
+                                                                       fixed_step)
+                                                                      (("1"
+                                                                        (inst?)
+                                                                        (("1"
+                                                                          (expand
+                                                                           fmi_tick)
+                                                                          (("1"
+                                                                            (expand
+                                                                             tick)
+                                                                            (("1"
+                                                                              (expand
+                                                                               attack)
+                                                                              (("1"
+                                                                                (simplify)
+                                                                                (("1"
+                                                                                  (rewrite-with-fnum
+                                                                                   -1
+                                                                                   1)
+                                                                                  (("1"
+                                                                                    (expand
+                                                                                     init_state)
+                                                                                    (("1"
+                                                                                      (assert)
+                                                                                      (("1"
+                                                                                        (cancel-by
+                                                                                         1
+                                                                                         "S")
+                                                                                        nil
+                                                                                        nil))
+                                                                                      nil))
+                                                                                    nil))
+                                                                                  nil))
+                                                                                nil))
+                                                                              nil))
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil)
+                                                               ("2"
+                                                                (assert)
+                                                                (("2"
+                                                                  (flatten)
+                                                                  (("2"
+                                                                    (hide
+                                                                     1)
+                                                                    (("2"
+                                                                      (assert)
+                                                                      (("2"
+                                                                        (lemma
+                                                                         lin_value)
+                                                                        (("2"
+                                                                          (inst?)
+                                                                          (("2"
+                                                                            (assert)
+                                                                            (("2"
+                                                                              (expand
+                                                                               init_state)
+                                                                              (("2"
+                                                                                (assert)
+                                                                                (("2"
+                                                                                  (lemma
+                                                                                   fixed_step)
+                                                                                  (("2"
+                                                                                    (inst?)
+                                                                                    (("2"
+                                                                                      (expand
+                                                                                       fmi_tick)
+                                                                                      (("2"
+                                                                                        (expand
+                                                                                         tick)
+                                                                                        (("2"
+                                                                                          (expand
+                                                                                           attack)
+                                                                                          (("2"
+                                                                                            (simplify)
+                                                                                            (("2"
+                                                                                              (rewrite-with-fnum
+                                                                                               -1
+                                                                                               1)
+                                                                                              (("2"
+                                                                                                (expand
+                                                                                                 init_state)
+                                                                                                (("2"
+                                                                                                  (assert)
+                                                                                                  (("2"
+                                                                                                    (cancel-by
+                                                                                                     1
+                                                                                                     "S")
+                                                                                                    nil
+                                                                                                    nil))
+                                                                                                  nil))
+                                                                                                nil))
+                                                                                              nil))
+                                                                                            nil))
+                                                                                          nil))
+                                                                                        nil))
+                                                                                      nil))
+                                                                                    nil))
+                                                                                  nil))
+                                                                                nil))
+                                                                              nil))
+                                                                            nil))
+                                                                          nil))
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil)
+                                 ("2"
+                                  (hide 2)
+                                  (("2" (grind) nil nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil)
+                           ("2" (hide 2) (("2" (grind) nil nil)) nil)
+                           ("3" (hide 2) (("3" (grind) nil nil)) nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
+    (nznum nonempty-type-eq-decl nil number_fields nil)
+    (/= const-decl "boolean" notequal nil)
+    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (posnat nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number nonempty-type-decl nil numbers nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (both_sides_plus_le1 formula-decl nil real_props nil)
+    (div_mult_pos_le2 formula-decl nil real_props nil)
+    (times_div1 formula-decl nil real_props nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (posreal_div_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
+    (IF const-decl "[boolean, T, T -> T]" if_def nil)
+    (fmi_tick const-decl "State" SemiAutonomousLFR nil)
+    (posreal nonempty-type-eq-decl nil real_types nil)
+    (MotorSpeed type-eq-decl nil SemiAutonomousLFR nil)
+    (LightSensors type-eq-decl nil SemiAutonomousLFR nil)
+    (Gear type-decl nil SemiAutonomousLFR nil)
+    (CruiseControl type-decl nil SemiAutonomousLFR nil)
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (cos_range application-judgement "trig_range" sincos_def
+     "trig_fnd/")
+    (sin_range application-judgement "trig_range" sincos_def
+     "trig_fnd/")
+    (minus_real_is_real application-judgement "real" reals nil)
+    (X skolem-const-decl "real" extended_robot nil)
+    (update_left_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (update_right_motor_speed const-decl "Speed" SemiAutonomousLFR nil)
+    (tick const-decl "State" SemiAutonomousLFR nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (both_sides_times_pos_le1 formula-decl nil real_props nil)
+    (nonneg_rat nonempty-type-eq-decl nil rationals nil)
+    (posrat nonempty-type-eq-decl nil rationals nil)
+    (TRUE const-decl "bool" booleans nil)
+    (id const-decl "(bijective?[T, T])" identity nil)
+    (bijective? const-decl "bool" functions nil)
+    (S const-decl "posreal" SemiAutonomousLFR nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (attack const-decl "State" SemiAutonomousLFR nil)
+    (lin_value formula-decl nil extended_robot nil)
+    (both_sides_minus_le1 formula-decl nil real_props nil)
+    (both_sides_plus_le2 formula-decl nil real_props nil)
+    (times_div2 formula-decl nil real_props nil)
+    (div_cancel4 formula-decl nil real_props nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (cos const-decl "real" sincos_def "trig_fnd/")
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (fixed_step formula-decl nil extended_robot nil))
+   shostak)
+  (maximum_distance-1 nil 3772194899
+   ("" (lemma fixed_step)
+    (("" (skeep)
+      (("" (inst -1 K)
+        (("" (rewrite-with-fnum -1 1)
+          (("" (simplify) (("" (postpone) nil nil)) nil)) nil))
+        nil))
+      nil))
+    nil)
+   nil shostak))
+ (maximum_distance_x 0
+  (maximum_distance_x-1 nil 3772198053
+   ("" (skeep)
+    (("" (lemma fixed_step)
+      (("" (inst?)
+        (("" (rewrite-with-fnum -1 1)
+          (("" (simplify)
+            (("" (both-sides + "CS(K-1)`xx" 1)
+              (("" (simplify)
+                (("" (name-replace "X" "CS(K-1)`xx")
+                  (("" (rewrite CS)
+                    (("" (rewrite ext_tick)
+                      (("" (rewrite update_position)
+                        (("" (rewrite update_speed)
+                          (("" (simplify)
+                            (("" (rewrite X)
+                              ((""
+                                (both-sides - "CS(K-1)`xx" 1)
+                                (("1"
+                                  (simplify)
+                                  (("1"
+                                    (lift-if)
+                                    (("1"
+                                      (lemma fixed_step)
+                                      (("1"
+                                        (inst?)
+                                        (("1"
+                                          (rewrite-with-fnum -1 1)
+                                          (("1"
+                                            (split)
+                                            (("1" (assert) nil nil)
+                                             ("2"
+                                              (flatten)
+                                              (("2"
+                                                (hide 1)
+                                                (("2"
+                                                  (split)
+                                                  (("1"
+                                                    (assert)
+                                                    nil
+                                                    nil)
+                                                   ("2"
+                                                    (flatten)
+                                                    (("2"
+                                                      (hide 1)
+                                                      (("2"
+                                                        (split)
+                                                        (("1"
+                                                          (assert)
+                                                          nil
+                                                          nil)
+                                                         ("2"
+                                                          (flatten)
+                                                          (("2"
+                                                            (hide 1)
+                                                            (("2"
+                                                              (split)
+                                                              (("1"
+                                                                (assert)
+                                                                nil
+                                                                nil)
+                                                               ("2"
+                                                                (flatten)
+                                                                (("2"
+                                                                  (hide
+                                                                   1)
+                                                                  (("2"
+                                                                    (lemma
+                                                                     lin_value)
+                                                                    (("2"
+                                                                      (inst?)
+                                                                      (("2"
+                                                                        (assert)
+                                                                        nil
+                                                                        nil))
+                                                                      nil))
+                                                                    nil))
+                                                                  nil))
+                                                                nil))
+                                                              nil))
+                                                            nil))
+                                                          nil))
+                                                        nil))
+                                                      nil))
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil)
+                                 ("2"
+                                  (hide 2)
+                                  (("2" (grind) nil nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((fixed_step formula-decl nil extended_robot nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (div_mult_pos_le2 formula-decl nil real_props nil)
+    (both_sides_plus_le1 formula-decl nil real_props nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (lin_value formula-decl nil extended_robot nil)
+    (both_sides_minus_le1 formula-decl nil real_props nil)
+    (both_sides_plus_le2 formula-decl nil real_props nil)
+    (div_cancel4 formula-decl nil real_props nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
+    (IF const-decl "[boolean, T, T -> T]" if_def nil)
+    (- const-decl "[numfield -> numfield]" number_fields nil)
+    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (minus_real_is_real application-judgement "real" reals nil)
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (posrat_times_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (posnat nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak))
+ (maximum_step 0
+  (maximum_step-1 nil 3772271508
+   ("" (flatten)
+    (("" (skeep)
+      (("" (lemma maximum_distance)
+        (("" (inst?)
+          (("" (sub-formulas 1 -1)
+            (("" (simplify)
+              (("" (assert)
+                (("" (lemma fixed_step)
+                  (("" (expand init_state)
+                    (("" (inst?) (("" (assert) nil nil)) nil)) nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (number nonempty-type-decl nil numbers nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (>= const-decl "bool" reals nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (posnat nonempty-type-eq-decl nil integers nil)
+    (fixed_step formula-decl nil extended_robot nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (<= const-decl "bool" reals nil)
+    (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (/= const-decl "boolean" notequal nil)
+    (nznum nonempty-type-eq-decl nil number_fields nil)
+    (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (bijective? const-decl "bool" functions nil)
+    (id const-decl "(bijective?[T, T])" identity nil)
+    (TRUE const-decl "bool" booleans nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (maximum_distance formula-decl nil extended_robot nil))
+   shostak))
+ (lem2_TCC1 0
+  (lem2_TCC1-1 nil 3772364843 ("" (subtype-tcc) nil nil) nil nil))
+ (lem2 0
+  (lem2-1 nil 3772364844
+   ("" (induct L)
+    (("1" (simplify)
+      (("1" (lemma maximum_distance)
+        (("1" (skeep) (("1" (inst?) (("1" (assert) nil nil)) nil))
+          nil))
+        nil))
+      nil)
+     ("2" (skeep)
+      (("2" (skeep)
+        (("2" (inst?)
+          (("2" (sub-formulas 1 -1)
+            (("2" (simplify)
+              (("2" (lemma maximum_distance)
+                (("2" (inst -1 "K-ja")
+                  (("2" (sub-formulas 1 -1)
+                    (("2" (simplify)
+                      (("2" (field)
+                        (("2"
+                          (case "CS(K)`state`step= CS(K - ja)`state`step")
+                          (("1" (rewrite-with-fnum -1 1)
+                            (("1" (field) nil nil)) nil)
+                           ("2" (hide 2)
+                            (("2" (assert)
+                              (("2"
+                                (lemma fixed_step)
+                                (("2"
+                                  (copy -1)
+                                  (("2"
+                                    (inst -1 K)
+                                    (("2"
+                                      (inst -2 K-ja)
+                                      (("2" (assert) nil nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (posint_plus_nnint_is_posint application-judgement "posint"
+     integers nil)
+    (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (= const-decl "[T, T -> boolean]" equalities nil)
+    (minus_odd_is_odd application-judgement "odd_int" integers nil)
+    (fixed_step formula-decl nil extended_robot nil)
+    (both_sides_minus_le1 formula-decl nil real_props nil)
+    (both_sides_plus_le1 formula-decl nil real_props nil)
+    (both_sides_plus_le2 formula-decl nil real_props nil)
+    (both_sides_div_pos_le1 formula-decl nil real_props nil)
+    (both_sides_times_pos_le2 formula-decl nil real_props nil)
+    (times_div2 formula-decl nil real_props nil)
+    (posreal_div_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (bijective? const-decl "bool" functions nil)
+    (id const-decl "(bijective?[T, T])" identity nil)
+    (TRUE const-decl "bool" booleans nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (posnat nonempty-type-eq-decl nil integers nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (maximum_distance formula-decl nil extended_robot nil)
+    (above_induction formula-decl nil bounded_int_inductions nil)
+    (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
+    (nznum nonempty-type-eq-decl nil number_fields nil)
+    (/= const-decl "boolean" notequal nil)
+    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil)
+    (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (pred type-eq-decl nil defined_types nil)
+    (above nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil))
+   shostak))
+ (maximum_step_attack_TCC1 0
+  (maximum_step_attack_TCC1-1 nil 3773054816 ("" (subtype-tcc) nil nil)
+   ((posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil))
+   nil))
+ (maximum_step_attack 0
+  (maximum_step_attack-1 nil 3772273419
+   ("" (flatten)
+    (("" (skeep)
+      (("" (skeep)
+        (("" (lemma lem2)
+          (("" (inst?)
+            (("" (assert)
+              (("" (sub-formulas 1 -1)
+                (("" (simplify)
+                  (("" (lemma fixed_step)
+                    (("" (inst?)
+                      (("" (expand init_state)
+                        (("" (rewrite-with-fnum -1 1)
+                          (("" (assert) (("" (postpone) nil nil)) nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((posreal_times_posreal_is_posreal application-judgement "posreal"
+     real_types nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (number nonempty-type-decl nil numbers nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (> const-decl "bool" reals nil)
+    (above nonempty-type-eq-decl nil integers nil)
+    (>= const-decl "bool" reals nil)
+    (nonneg_int nonempty-type-eq-decl nil integers nil)
+    (posnat nonempty-type-eq-decl nil integers nil)
+    (L const-decl "posnat" SemiAutonomousLFR nil)
+    (TRUE const-decl "bool" booleans nil)
+    (id const-decl "(bijective?[T, T])" identity nil)
+    (bijective? const-decl "bool" functions nil)
+    (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
+    (nznum nonempty-type-eq-decl nil number_fields nil)
+    (/= const-decl "boolean" notequal nil)
+    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil)
+    (State type-eq-decl nil SemiAutonomousLFR nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (<= const-decl "bool" reals nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (fixed_step formula-decl nil extended_robot nil)
+    (init_state const-decl "State" SemiAutonomousLFR nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (lem2 formula-decl nil extended_robot nil))
+   shostak))
+ (lem1 0
+  (lem1-1 nil 3772282093
+   ("" (skeep)
+    (("" (induct J)
+      (("1" (typepred J!1) (("1" (propax) nil nil)) nil)
+       ("2" (flatten)
+        (("2" (assert)
+          (("2" (rewrite CS)
+            (("2" (rewrite CS)
+              (("2" (rewrite init_state)
+                (("2" (simplify) (("2" (grind) nil nil)) nil)) nil))
+              nil))
+            nil))
+          nil))
+        nil)
+       ("3" (skeep)
+        (("3" (split)
+          (("1" (rewrite CS 1)
+            (("1" (rewrite ext_tick)
+              (("1" (rewrite update_position)
+                (("1" (rewrite update_speed)
+                  (("1" (simplify)
+                    (("1" (rewrite fmi_tick)
+                      (("1" (rewrite attack)
+                        (("1" (simplify)
+                          (("1" (lift-if)
+                            (("1" (split)
+                              (("1"
+                                (flatten)
+                                (("1"
+                                  (split)
+                                  (("1"
+                                    (flatten)
+                                    (("1"
+                                      (rewrite tick)
+                                      (("1"
+                                        (simplify)
+                                        (("1"
+                                          (lemma always_auto)
+                                          (("1"
+                                            (inst?)
+                                            (("1"
+                                              (lift-if)
+                                              (("1"
+                                                (split)
+                                                (("1"
+                                                  (flatten)
+                                                  (("1"
+                                                    (assert)
+                                                    nil
+                                                    nil))
+                                                  nil)
+                                                 ("2"
+                                                  (assert)
+                                                  nil
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil)
+                                   ("2"
+                                    (flatten)
+                                    (("2"
+                                      (assert)
+                                      (("2"
+                                        (rewrite tick)
+                                        (("2"
+                                          (simplify)
+                                          (("2"
+                                            (lemma always_auto)
+                                            (("2"
+                                              (inst?)
+                                              (("2"
+                                                (lift-if)
+                                                (("2"
+                                                  (split)
+                                                  (("1"
+                                                    (flatten)
+                                                    (("1"
+                                                      (assert)
+                                                      nil
+                                                      nil))
+                                                    nil)
+                                                   ("2"
+                                                    (assert)
+                                                    nil
+                                                    nil))
+                                                  nil))
+                                                nil))
+                                              nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil)
+                               ("2"
+                                (flatten)
+                                (("2"
+                                  (rewrite tick)
+                                  (("2"
+                                    (simplify)
+                                    (("2"
+                                      (lemma always_auto)
+                                      (("2"
+                                        (inst?)
+                                        (("2"
+                                          (lift-if)
+                                          (("2"
+                                            (split)
+                                            (("1"
+                                              (flatten)
+                                              (("1" (assert) nil nil))
+                                              nil)
+                                             ("2" (assert) nil nil))
+                                            nil))
+                                          nil))
+                                        nil))
+                                      nil))
+                                    nil))
+                                  nil))
+                                nil))
+                              nil))
+                            nil))
+                          nil))
+                        nil))
+                      nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil)
+           ("2" (assert) nil nil))
+          nil))
+        nil))
+      nil))
+    nil)
+   ((+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
+    (numfield nonempty-type-eq-decl nil number_fields nil)
+    (posint_plus_nnint_is_posint application-judgement "posint"
+     integers nil)
+    (int_minus_int_is_int application-judgement "int" integers nil)
+    (real_minus_real_is_real application-judgement "real" reals nil)
+    (always_auto formula-decl nil extended_robot nil) nil nil nil nil
+    (odd_minus_odd_is_even application-judgement "even_int" integers
+     nil)
+    nil nil (init_ext_state const-decl "Ext_State" extended_robot nil)
+    nil nil nil nil nil
+    (update_speed const-decl "Ext_State" extended_robot nil)
+    (update_position const-decl "Ext_State" extended_robot nil)
+    (ext_tick const-decl "Ext_State" extended_robot nil)
+    (minus_real_is_real application-judgement "real" reals nil)
+    (real_times_real_is_real application-judgement "real" reals nil)
+    (real_plus_real_is_real application-judgement "real" reals nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (real_ge_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (minus_nzrat_is_nzrat application-judgement "nzrat" rationals nil)
+    (nzreal_div_nzreal_is_nzreal application-judgement "nzreal"
+     real_types nil)
+    (posrat_div_posrat_is_posrat application-judgement "posrat"
+     rationals nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (nnint_plus_posint_is_posint application-judgement "posint"
+     integers nil)
+    (even_plus_odd_is_odd application-judgement "odd_int" integers nil)
+    (real_gt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (NOT const-decl "[bool -> bool]" booleans nil)
+    (above_induction formula-decl nil bounded_int_inductions nil)
+    (CS def-decl "Ext_State" extended_robot nil)
+    (Ext_State type-eq-decl nil extended_robot nil) nil
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (>= const-decl "bool" reals nil) (<= const-decl "bool" reals nil)
+    (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
+    (pred type-eq-decl nil defined_types nil)
+    (above nonempty-type-eq-decl nil integers nil)
+    (> const-decl "bool" reals nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (number nonempty-type-decl nil numbers nil))
+   shostak)))
+
