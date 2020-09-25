@@ -1,4 +1,4 @@
-# LFR-formally-verified
+# LFR-with-attacks
 
 # Requirements
  1. Linux-like OS (currently tested on Ubuntu 16.04)
