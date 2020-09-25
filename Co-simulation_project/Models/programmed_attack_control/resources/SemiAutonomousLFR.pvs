@@ -1,0 +1,129 @@
+SemiAutonomousLFR: THEORY
+ BEGIN
+  %-- cruise control
+  CruiseControl: TYPE = { AUTO, MANUAL }
+
+  %-- light sensors
+  LightSensorReading: TYPE = { x: nonneg_real | x <= 255 }
+  LightSensors: TYPE = [#
+    left: LightSensorReading,
+    right: LightSensorReading
+  #]
+ 
+  %-- motor
+  Speed: TYPE = { x: real | x >= -1 AND x <= 1 }
+  MotorSpeed: TYPE = [#
+    left: Speed,
+    right: Speed
+  #]
+ 
+
+  %-- gears
+  Gear: TYPE = { DRIVE, REVERSE, NEUTRAL }
+
+  %-- user interface state
+  State: TYPE =
+        [#  lightSensors: LightSensors,
+            motorSpeed: MotorSpeed,
+			gear: Gear,
+			timesteps: real,
+			time_of_attack: real,  % when timesteps is greater than time of attack the attack on sensor is on
+            cc: CruiseControl #]
+
+  init_state: State =
+      (# lightSensors := (# left := 0, right := 0 #),
+         motorSpeed := (# left := 0, right := 0 #),
+		 gear := DRIVE,
+		 timesteps := 0,
+		 time_of_attack := NRANDOM(20)+1, %+1 because we need to avoid 0
+         cc := AUTO #)
+
+  update_left_motor_speed(st: State): Speed =
+   LET ls = lightSensors(st) IN
+     COND ls`right <= 150 AND ls`left <= 150 -> 0.4,
+          ls`right > 150 AND ls`left <= 150 -> 0.5,
+          ls`right <= 150 AND ls`left > 150 -> 0.1,
+          ELSE -> motorSpeed(st)`left ENDCOND
+
+  update_right_motor_speed(st: State): Speed =
+   LET ls = lightSensors(st) IN  
+     COND ls`right <= 150 AND ls`left <= 150 -> -0.4,
+          ls`right > 150 AND ls`left <= 150 -> -0.1,
+          ls`right <= 150 AND ls`left > 150 -> -0.5,
+          ELSE -> motorSpeed(st)`right ENDCOND
+
+attack3(st: State): State =  % actuator attack
+   IF timesteps(st) = time_of_attack(st) THEN st  % the attack is on when timestep is equal to time of attack
+		WITH [motorSpeed := (# left := 0,   %attack on actuators, the robot  stops for a step
+                             right := 0 #),
+                             timesteps := 0,   %						after each attacj timestep is reset
+                             time_of_attack := NRANDOM(20)+1 %+1 because we need to avoid 0     and we compute a new time of attack
+              ]   
+     ELSE st
+     ENDIF
+     
+attack1(st: State): State = % sensor attack
+    IF timesteps(st) > time_of_attack(st)  % the attack starts when timestep is greater than time of attack
+		THEN st		WITH [lightSensors := (# left := 140, %% attack on sensor, left sensor stuck on BLACK when timestep > time_of_attack
+                             right := st`lightSensors`right #)                             
+              ]
+        ELSE st   
+     ENDIF
+
+attack2(st: State ): State =
+	    IF  time_of_attack(st)  <= 40 THEN
+	    	 st WITH [
+		   lightSensors  :=(# left := 160,right  := st`lightSensors`right #),
+		  time_of_attack  :=   time_of_attack(st) + 1 ]
+	    ELSE IF time_of_attack(st) < 80 THEN
+	    	 st WITH [
+		 time_of_attack  :=  time_of_attack(st) + 1 ]
+	    	 ELSE  st WITH [time_of_attack  := 0 ]
+		 ENDIF
+	    ENDIF
+
+  tick(st: State): State =   % control without attack
+      IF cc(st) = AUTO
+        THEN st WITH [motorSpeed
+                       := (# left := update_left_motor_speed(st),
+                             right := update_right_motor_speed(st) #),
+                       timesteps:= timesteps(st)+1      
+                             ]
+      ELSE st WITH [ timesteps:= timesteps(st)+1      
+                             ]
+      ENDIF
+      
+ %     fmi_tick1(st:State):State =
+  %    LET state:State = attack1(st)  % sensor attack, so, attack function before tick
+   %   IN tick(state)
+      
+     fmi_tick1(st:State):State =
+      LET state:State = tick(st)   % actuator attack, so, attack function after tick
+      IN attack3(state)
+      
+      kth_step(K:nat): RECURSIVE State=
+      IF(K=0) THEN init_state
+      ELSE
+      fmi_tick1(kth_step(K-1)) %fmi_tick1 is the one with the sensor attack
+      ENDIF
+      MEASURE K
+      
+      always_auto : LEMMA	%the robot is always in state AUTO (because it's the initial one)
+      FORALL(K:nat): cc(kth_step(K)) = AUTO
+
+      linear_timesteps : LEMMA % at step K timesteps is =K
+      FORALL (K:nat): timesteps(kth_step(K))=K
+
+      fixed_interval : LEMMA
+      FORALL(K:nat): time_of_attack(kth_step(K))=NRANDOM(500)+1 %at each step K the time_of_attack is always equal to NRANDOM(500)+1 (initial value) 
+      
+      never_right : THEOREM
+      FORALL(K:above(503)) : motorSpeed(kth_step(K))`left <= -motorSpeed(kth_step(K))`right
+
+
+
+N:above(1)
+     never_right_random : THEOREM %uses always_auto, linear_timesteps and fixed_time_of_attack
+      FORALL(K:above(NRANDOM(500)+N)) : motorSpeed(kth_step(K))`left<=-motorSpeed(kth_step(K))`right % for all the steps after the attack on sensor begins, the robot will never turn right because the left motor will always be less than or equal to the right one
+
+END SemiAutonomousLFR

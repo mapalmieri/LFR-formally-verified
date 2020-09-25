@@ -1,0 +1,12 @@
+Line_following_robot1: THEORY
+ BEGIN IMPORTING SemiAutonomousLFR
+  %-- APIS
+  init(x: real): State = init_state
+
+  
+
+  click_ActsZero(st: State): State = ActsZero(st)
+  click_SLBlack(st: State): State = SLBlack(st)
+  click_refresh(st: State): State = st
+
+END Line_following_robot1

@@ -1,0 +1,13 @@
+{
+    "MAX_NEW_FILENAME": 100,
+    "PATH_FMUS": "FMUs",
+    "PATH_MODELS": "Models",
+    "name": "",
+    "rootPath": "",
+    "configPath": "",
+    "containers": [],
+    "configs": [],
+    "PATH_MULTI_MODELS": "Multi-models",
+    "PATH_SYSML": "SysML",
+    "name\u201d:\u201dLine Follower Robot\u201d,\u201drootPath": ""
+}
