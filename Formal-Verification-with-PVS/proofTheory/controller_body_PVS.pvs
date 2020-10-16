@@ -1,0 +1,89 @@
+controller_body_PVS: THEORY
+ BEGIN
+ IMPORTING LFR_attack1
+ IMPORTING trig_fnd@sincos_def
+ 
+ Ext_State: TYPE =
+        [#  state:State,
+         linspeed:real,
+         angspeed:real,
+	     xx:real,
+	     yy:real,
+	     theta:real
+	 #]
+	 
+
+		
+ init_ext_state:Ext_State = (#state:= init_state, linspeed:=0.00, angspeed:=0, xx :=0.138,yy:=-0.08,theta:=0#)
+
+ update_position(st:Ext_State):Ext_State =
+ st WITH [xx:=st`xx+st`linspeed*st`state`step*(-sin(st`theta)), yy:=st`yy+st`linspeed*st`state`step*cos(st`theta), theta:=st`theta+st`angspeed*st`state`step]
+ 
+ update_speed(st:Ext_State):Ext_State =
+ LET st1:Ext_State = st WITH [state:=fmi_tick(st`state)] IN
+ st1 WITH [
+			linspeed := COND
+			st1`state`motorSpeed`left = 0 -> 0,
+			st1`state`motorSpeed`left = 0.4 -> 0.0625,
+			st1`state`motorSpeed`left = 0.5 -> 0.0575,
+			st1`state`motorSpeed`left = 0.1 -> 0.0575,
+			else -> st1`linspeed
+			
+			ENDCOND, 
+			angspeed := COND
+			st1`state`motorSpeed`left = 0 -> 0,
+			st1`state`motorSpeed`left = 0.4 -> 0,
+			st1`state`motorSpeed`left = 0.5 -> -0.475,			 
+			st1`state`motorSpeed`left = 0.1 -> 0.475,
+			else -> st1`angspeed
+			ENDCOND 
+			
+]
+
+ ext_tick(st:Ext_State): Ext_State = update_position(update_speed(st))
+ 
+ 
+ CS(K:nat): RECURSIVE Ext_State=
+      IF(K=0) THEN init_ext_state 
+      ELSE
+      ext_tick(CS(K-1))
+      ENDIF
+      MEASURE K
+      
+            
+      always_auto : LEMMA
+      FORALL(K:nat): cc(state(CS(K))) = init_state`cc
+
+      linear_timesteps : LEMMA
+      FORALL (K:nat): timesteps(state(CS(K)))=K
+
+      fixed_interval : LEMMA
+      FORALL(K:nat): interval(state(CS(K)))=init_state`interval
+
+      fixed_step : LEMMA
+      FORALL(K:nat): step(state(CS(K)))=init_state`step
+
+      lin_value : LEMMA
+      FORALL(K:nat) : CS(K)`linspeed =  1/16 OR  CS(K)`linspeed =  23/400 OR  CS(K)`linspeed =  0
+
+      maximum_distance : lemma
+      FORALL(K:posnat): CS(K)`yy - CS(K-1)`yy <= CS(K)`state`step*0.0625
+	
+      maximum_step: THEOREM
+      S<= 0.8 IMPLIES
+      FORALL(K:posnat):CS(K)`yy - CS(K-1)`yy <= 0.05
+
+      lem2: LEMMA
+      FORALL(L:above(0)):FORALL(K:above(L)):CS(K)`yy - CS(K-L)`yy <= CS(K)`state`step*0.0625*L
+
+      maximum_step_attack: THEOREM
+      L*S <= 0.24 IMPLIES FORALL(K:above(L)): CS(K)`yy - CS(K-L)`yy <=0.015
+
+      %maximum_step_attack: THEOREM
+      %FORALL(K:nat):CS(K)`theta =0
+      
+     
+      
+     
+
+END controller_body_PVS
